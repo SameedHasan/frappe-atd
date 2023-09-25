@@ -1,0 +1,16 @@
+{
+  "title": "Jobs",
+  "description": "Form description",
+  "type": "object",
+  "required": ["vessel_name", "location", "job_type", "customer"],
+  "properties": {
+    "vessel_name": { "title": "vessel_name", "type": "string" },
+    "location": { "title": "location", "type": "string" },
+    "job_type": {
+      "title": "job_type",
+      "type": "string",
+      "enum": ["Charge", "Discharge"]
+    },
+    "customer": { "title": "customer", "type": "string" }
+  }
+}

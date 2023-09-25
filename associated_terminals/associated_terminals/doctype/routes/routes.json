@@ -1,0 +1,83 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:{##}",
+ "creation": "2023-09-18 16:59:34.600458",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "ishidden",
+  "title",
+  "path",
+  "element",
+  "icon",
+  "roles"
+ ],
+ "fields": [
+  {
+   "fieldname": "element",
+   "fieldtype": "Code",
+   "label": "Element",
+   "reqd": 1
+  },
+  {
+   "fieldname": "path",
+   "fieldtype": "Data",
+   "label": "Path",
+   "reqd": 1
+  },
+  {
+   "fieldname": "title",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Title",
+   "reqd": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "ishidden",
+   "fieldtype": "Check",
+   "label": "isHidden",
+   "reqd": 1
+  },
+  {
+   "fieldname": "icon",
+   "fieldtype": "Data",
+   "label": "Icon",
+   "reqd": 1
+  },
+  {
+   "fieldname": "roles",
+   "fieldtype": "Table",
+   "label": "Roles",
+   "options": "RoutesRoles"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2023-09-20 11:32:53.007007",
+ "modified_by": "Administrator",
+ "module": "Associated Terminals",
+ "name": "Routes",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

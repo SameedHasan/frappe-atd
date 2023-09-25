@@ -1,0 +1,55 @@
+/* CustomVerticalTabs.css */
+
+.custom-vertical-tabs-container {
+    display: flex;
+    flex-direction: row;
+    min-height: 500px;
+}
+
+.custom-vertical-tabs {
+    flex: 0 0 auto;
+    width: 200px;
+    /* Adjust the width as needed */
+    background-color: #f0f2f5;
+    /* Background color for the tabs */
+    border-right: 1px solid #e8e8e8;
+    /* Right border */
+}
+
+.custom-vertical-tab {
+    padding: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    border-left: 3px solid transparent;
+    /* Left border to indicate active tab */
+}
+
+.custom-vertical-tab.active {
+    background-color: #fff;
+    /* Background color for the active tab */
+    border-left-color: #1890ff;
+    /* Color for the left border of the active tab */
+}
+
+.custom-vertical-tab:hover {
+    background-color: #e6f7ff;
+    /* Background color on hover */
+}
+
+.custom-vertical-tab-content {
+    padding: 16px;
+    flex-grow: 1;
+}
+
+/* Example: Adjust tab text color */
+.custom-vertical-tab,
+.custom-vertical-tab.active {
+    color: #333;
+    /* Tab text color */
+}
+
+/* Example: Adjust active tab text color */
+.custom-vertical-tab.active {
+    color: #1890ff;
+    /* Active tab text color */
+}
