@@ -39,13 +39,12 @@
   {
    "fieldname": "customer",
    "fieldtype": "Data",
-   "label": "Customer",
-   "reqd": 1
+   "label": "Customer"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-09-20 11:44:01.036364",
+ "modified": "2023-09-26 15:17:04.007317",
  "modified_by": "Administrator",
  "module": "Jobs",
  "name": "Jobs",

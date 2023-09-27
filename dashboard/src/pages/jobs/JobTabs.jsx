@@ -1,56 +1,32 @@
 import PropTypes from "prop-types";
-import { Tabs } from "antd";
-
-const { TabPane } = Tabs;
+import AntTabs from "../../components/ui/Tabs";
 
 const JobTabs = ({ record }) => {
-  return (
-    <Tabs defaultActiveKey="1">
-      {/* Details Tab */}
-      <TabPane tab="Detail" key="1">
-        <h1>Details tab: {record.id}</h1>
-        {/* <Detail record={record} /> */}
-      </TabPane>
-      {/* Loading Tab */}
-      <TabPane tab="Loading" key="2">
-        <h1>Loading tab: {record.id}</h1>
-        {/* <Loading record={record} /> */}
-      </TabPane>
-      {/* Cranes Tab */}
-      <TabPane tab="Cranes" key="4">
-        <h1>Cranes tab: {record.id}</h1>
-        {/* <Cranes record={record} /> */}
-      </TabPane>
-      {/* Barges Tab */}
-      <TabPane tab="Barges" key="5">
-        <h1>Barges tab: {record.id}</h1>
-        {/* <Barges record={record} /> */}
-      </TabPane>
-      {/* Equipment Tab */}
-      <TabPane tab="Equipment" key="6">
-        <h1>Equipment tab: {record.id}</h1>
-        {/* <Equipment record={record} /> */}
-      </TabPane>
-      {/* Logs Tab */}
-      <TabPane tab="Log" key="7">
-        <h1>Logs tab: {record.id}</h1>
-        {/* <Logs record={record} /> */}
-      </TabPane>
-      {/* Documents Tab */}
-      <TabPane tab="Documents" key="8">
-        <h1>Documents tab: {record.id}</h1>
-        {/* <Documents record={record} /> */}
-      </TabPane>
-      {/* Activity Tab */}
-      <TabPane tab="Activity" key="9">
-        <h1>Activity tab: {record.id}</h1>
-        {/* <Activity record={record} /> */}
-      </TabPane>
-    </Tabs>
-  );
+  const items = [
+    { label: "Detail", key: "1", children: <h1>Details tab: {record.id}</h1> },
+    { label: "Loading", key: "2", children: <h1>Loading tab: {record.id}</h1> },
+    { label: "Cranes", key: "4", children: <h1>Cranes tab: {record.id}</h1> },
+    { label: "Barges", key: "5", children: <h1>Barges tab: {record.id}</h1> },
+    {
+      label: "Equipment",
+      key: "6",
+      children: <h1>Equipment tab: {record.id}</h1>,
+    },
+    { label: "Log", key: "7", children: <h1>Logs tab: {record.id}</h1> },
+    {
+      label: "Documents",
+      key: "8",
+      children: <h1>Documents tab: {record.id}</h1>,
+    },
+    {
+      label: "Activity",
+      key: "9",
+      children: <h1>Activity tab: {record.id}</h1>,
+    },
+  ];
+  return <AntTabs tabs={items} position="top" />;
 };
 
-// Define PropTypes for your component
 JobTabs.propTypes = {
   record: PropTypes.object.isRequired,
 };

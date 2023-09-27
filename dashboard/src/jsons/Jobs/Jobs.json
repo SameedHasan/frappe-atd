@@ -2,7 +2,7 @@
   "title": "Jobs",
   "description": "Form description",
   "type": "object",
-  "required": ["vessel_name", "location", "job_type", "customer"],
+  "required": ["vessel_name", "location", "job_type"],
   "properties": {
     "vessel_name": { "title": "vessel_name", "type": "string" },
     "location": { "title": "location", "type": "string" },

@@ -1,10 +1,10 @@
 import { LockOutlined, UserOutlined } from "@ant-design/icons";
 import { Button, Form, Input, message } from "antd";
 import { useNavigate } from "react-router-dom";
-import styles from "../styles/auth.module.css";
+import styles from "../../styles/auth.module.css";
 import { useContext, useEffect } from "react";
-import { UserContext } from "../utils/context/UserProvider";
-import Loader from "../components/ui/Loader";
+import { UserContext } from "../../utils/context/UserProvider";
+import Loader from "../../components/ui/Loader";
 // import styles from './auth.module.css';
 
 const LoginPage = () => {
@@ -14,7 +14,7 @@ const LoginPage = () => {
   useEffect(() => {
     if (currentUser) {
       console.log("getUserCookie", currentUser);
-      navigate("/dashboard", { replace: true });
+      navigate("/jobs", { replace: true });
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [currentUser]);

@@ -1,6 +1,6 @@
 import { useContext, useEffect } from "react";
 
-import { HeadingContext } from "../layouts/MainLayout";
+import { HeadingContext } from "../../layouts/MainLayout";
 
 const PlannerPage = () => {
   const { setHeading, setSubHeading } = useContext(HeadingContext);

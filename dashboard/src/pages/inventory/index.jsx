@@ -1,15 +1,16 @@
 import { useContext, useEffect, useState } from "react";
 import { Button, Result, Tag } from "antd";
 import { SettingOutlined } from "@ant-design/icons";
-import { jobData } from "../../data/dummyData";
+import { inventoryData } from "../../data/dummyData";
 import AntDrawer from "../../components/ui/Drawer";
-import JobTabs from "./JobTabs";
+// import InventoryTabs from "./InventoryTabs";
 import AntTable from "../../components/ui/Table";
 import { HeadingContext } from "../../layouts/MainLayout";
-const JobsPage = () => {
+import InventoryTabs from "../contracts/tabs";
+const InventoryPage = () => {
   const { setHeading, setSubHeading } = useContext(HeadingContext);
   useEffect(() => {
-    setHeading("Jobs");
+    setHeading("Inventory");
     setSubHeading("");
   }, []);
 
@@ -21,17 +22,17 @@ const JobsPage = () => {
   const columns = [
     {
       title: "Id",
-      dataIndex: "id",
-      key: "id",
-      width: "10%",
+      dataIndex: "key",
+      key: "key",
+      wkeyth: "10%",
       sortDirections: ["descend"],
       defaultSortOrder: "descend",
-
+      // sorter: (a, b) => a.key - b.key,
       sorter: (a, b) => {
-        if (a.id < b.id) {
+        if (a.key < b.key) {
           return -1;
         }
-        if (a.id > b.id) {
+        if (a.key > b.key) {
           return 1;
         }
         return 0;
@@ -39,51 +40,45 @@ const JobsPage = () => {
     },
 
     {
-      title: "Vessel Name",
-      dataIndex: "vessel_name",
-      key: "vessel_name",
+      title: "Job Name",
+      dataIndex: "jobName",
+      key: "jobName",
       width: "12%",
-      // filteredValue: searchVessel,
-      onFilter: (value, record) => record.vessel_name.includes(value),
     },
 
     {
-      title: "Location Name",
-      dataIndex: "location",
-      key: "location",
+      title: "Cargo",
+      dataIndex: "cargo",
+      key: "cargo",
       width: "12%",
-      // filteredValue: searchLocation,
-      onFilter: (value, record) => record.location.includes(value),
+    },
+
+    {
+      title: "BL #",
+      dataIndex: "bl",
+      key: "bl",
+
+      width: "12%",
     },
 
     {
       title: "Customer",
       dataIndex: "customer",
       key: "customer",
-      render: () => "Customer",
       width: "12%",
     },
 
     {
-      title: "Billing Company",
-      dataIndex: "billing_company",
-      key: "billing_company",
-      width: "12%",
-      // filteredValue: searchBilling,
-      onFilter: (value, record) => record.billing_company.includes(value),
-    },
-
-    {
-      title: "ETA Date",
-      dataIndex: "eta_date",
-      key: "eta_date",
+      title: "Sum Manif Tons",
+      dataIndex: "sumManifTons",
+      key: "sumManifTons",
       width: "12%",
     },
 
     {
-      title: "Job Type",
-      dataIndex: "job_type",
-      key: "job_type",
+      title: "Sum Manif Units",
+      dataIndex: "sumManifUnits",
+      key: "sumManifUnits",
       width: "12%",
     },
 
@@ -106,26 +101,6 @@ const JobsPage = () => {
         </Tag>
       ),
       width: "12%",
-      // filteredValue: [searchStatus],
-      onFilter: (value, record) => record.status.indexOf(value) === 0,
-    },
-    {
-      title: "CreatedAt",
-      key: "createdAt",
-      dataIndex: "createdAt",
-      width: "12%",
-      sortDirections: ["descend"],
-      defaultSortOrder: "descend",
-      sorter: (a, b) => {
-        if (a.createdAt < b.createdAt) {
-          return -1;
-        }
-        if (a.createdAt > b.createdAt) {
-          return 1;
-        }
-
-        return 0;
-      },
     },
     {
       title: "Set",
@@ -154,7 +129,11 @@ const JobsPage = () => {
           subTitle="Sorry, something went wrong."
         />
       ) : (
-        <AntTable data={jobData} columns={columns} isLoading={isLoading} />
+        <AntTable
+          data={inventoryData}
+          columns={columns}
+          isLoading={isLoading}
+        />
       )}
       {openDrawer && (
         <AntDrawer
@@ -162,11 +141,11 @@ const JobsPage = () => {
           opened={openDrawer}
           setOpenDrawer={setOpenDrawer}
         >
-          <JobTabs record={drawerData} />
+          <InventoryTabs record={drawerData} />
         </AntDrawer>
       )}
     </div>
   );
 };
 
-export default JobsPage;
+export default InventoryPage;

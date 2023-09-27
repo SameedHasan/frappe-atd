@@ -1,4 +1,4 @@
-import { createContext, useContext,  useState } from "react";
+import { createContext, useContext, useState } from "react";
 import { Layout } from "antd";
 const { Sider, Content } = Layout;
 
@@ -22,7 +22,7 @@ function MainLayout({ children }) {
       {!routeLoading && (
         <>
           <Sider trigger={null} collapsible collapsed={collapsed}>
-            <Sidebar />
+            <Sidebar collapsed={collapsed} />
           </Sider>
           <Layout className={styles.siteLayout}>
             <HeadingContext.Provider
@@ -33,8 +33,11 @@ function MainLayout({ children }) {
                 setSubHeading,
               }}
             >
-              <Navbar collapsed={collapsed} setCollapsed={setCollapsed} />
-              <Content className={styles.content}>{children}</Content>
+              {/* <Navbar collapsed={collapsed} setCollapsed={setCollapsed} /> */}
+              <Content className={styles.content}>
+                <Navbar collapsed={collapsed} setCollapsed={setCollapsed} />
+                {children}
+              </Content>
             </HeadingContext.Provider>
           </Layout>
         </>

@@ -2,7 +2,7 @@ import { useContext } from "react";
 import { Navigate, Route, Routes } from "react-router-dom";
 import MainLayout from "./layouts/MainLayout";
 import AuthLayout from "./layouts/AuthLayout";
-import LoginPage from "./pages/LoginPage";
+import LoginPage from "./pages/auth/LoginPage";
 import { UserContext } from "./utils/context/UserProvider";
 import { RouteContext } from "./utils/context/RoutesProvider";
 import {
@@ -16,8 +16,8 @@ function App() {
   const { currentUser, isLoading } = useContext(UserContext);
   const { data, error } = useContext(RouteContext);
 
-  if(error){
-    message.error(error)
+  if (error) {
+    message.error(error);
   }
   // Determine the initial route based on the user's authentication status
   const initialRoute = currentUser ? "/dashboard" : "/login";

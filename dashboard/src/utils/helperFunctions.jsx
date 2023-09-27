@@ -1,6 +1,7 @@
 import DashboardPage from "../pages/DashboardPage";
 import JobsPage from "../pages/jobs";
-import PlannerPage from "../pages/PlannerPage";
+// import JobsPage from "../pages/jobs";
+
 // import ProductionPage from "../pages/ProductionPage";
 import {
   CalendarOutlined,
@@ -17,7 +18,16 @@ import {
   TableOutlined,
   MacCommandOutlined,
 } from "@ant-design/icons";
-import ProductionPage from "../pages/production";
+import ProductionPage from "../pages/productions";
+import PlannerPage from "../pages/planner";
+import StowPlanPage from "../pages/stowplan";
+import InventoryPage from "../pages/inventory";
+import TruckingPage from "../pages/trucking";
+import MooringPage from "../pages/mooring";
+import ContractsPage from "../pages/contracts";
+import AccountingPage from "../pages/accounting";
+import SettingsPage from "../pages/settings";
+import ReportsPage from "../pages/reports";
 
 // Function to check if user's role(s) is present in routes
 export function hasCommonElement(array1, array2) {
@@ -33,7 +43,17 @@ export const createElementFromString = (elementName) => {
   const ElementComponent = {
     JobsPage: JobsPage,
     ProductionPage: ProductionPage,
+    StowPlanPage: StowPlanPage,
+
     PlannerPage: PlannerPage,
+    InventoryPage: InventoryPage,
+    TruckingPage: TruckingPage,
+    MooringPage: MooringPage,
+    ContractsPage: ContractsPage,
+    AccountingPage: AccountingPage,
+    ReportsPage: ReportsPage,
+    SettingsPage: SettingsPage,
+
     DashboardPage: DashboardPage,
 
     CalendarOutlined: CalendarOutlined,

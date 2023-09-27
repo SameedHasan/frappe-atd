@@ -10,8 +10,10 @@ import {
   hasCommonElement,
 } from "../../utils/helperFunctions";
 import logo from "../../assets/accociated-logo.svg";
+import logo1 from "../../assets/atd.svg";
 
-const Sidebar = () => {
+// eslint-disable-next-line react/prop-types
+const Sidebar = ({ collapsed }) => {
   const { logout, currentUser } = useContext(UserContext);
   const { data, isLoading } = useContext(RouteContext);
   const navigate = useNavigate();
@@ -61,18 +63,26 @@ const Sidebar = () => {
   return (
     <>
       <div className={styles.logo}>
-        <img
-          src={logo}
-          alt="Associated-Terminals"
-          style={{ height: "inherit" }}
-        />
+        {collapsed ? (
+          <img
+            src={logo1}
+            alt="Associated-Terminals"
+            style={{ height: "inherit" }}
+          />
+        ) : (
+          <img
+            src={logo}
+            alt="Associated-Terminals"
+            style={{ height: "inherit" }}
+          />
+        )}
       </div>
       <div>
         {!isLoading && (
           <Menu
             theme="light"
             mode="inline"
-            defaultSelectedKeys={["07"]}
+            defaultSelectedKeys={["01"]}
             className={styles.antMenuItem}
             items={getList()}
           />

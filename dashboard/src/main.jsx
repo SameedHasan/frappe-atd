@@ -12,8 +12,8 @@ console.log(import.meta.env.VITE_SOCKET_PORT);
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <FrappeProvider socketPort={9001}>
-      <BrowserRouter basename="dashboard">
+    <FrappeProvider socketPort={9000}>
+      <BrowserRouter>
         <UserProvider>
           <RoutesProvider>
             <App />
