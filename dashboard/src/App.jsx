@@ -11,6 +11,7 @@ import {
 } from "./utils/helperFunctions";
 import Loader from "./components/ui/Loader";
 import { Result, message } from "antd";
+import ProfilePage from "./pages/profile";
 
 function App() {
   const { currentUser, isLoading } = useContext(UserContext);
@@ -42,6 +43,7 @@ function App() {
         ))}
         <Route path="/" element={<Navigate to={initialRoute} />} />
         <Route path="/login" element={<LoginPage />} />
+        <Route path="/profile" element={<ProfilePage />} />
         {/* <Route path="/reports" element={<Reports />} /> */}
         <Route
           path="*"

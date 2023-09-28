@@ -13,6 +13,7 @@ def get_logged_user():
 		"full_name":doc.full_name,
 		"username":doc.username,
 		"roles": user_roles,
+    "image":doc.user_image   
     }
     
     return curr_user
