@@ -1,0 +1,2 @@
+
+{'title': 'Routes', 'description': 'Form description', 'type': 'object', 'required': ['ishidden', 'title', 'path', 'element', 'icon'], 'properties': {'ishidden': {'title': 'ishidden', 'type': '0 | 1'}, 'title': {'title': 'title', 'type': 'string'}, 'path': {'title': 'path', 'type': 'string'}, 'element': {'title': 'element', 'type': 'string'}, 'icon': {'title': 'icon', 'type': 'string'}, 'roles': {'title': 'roles', 'type': 'any'}, 'tabs': {'title': 'tabs', 'type': 'any'}}}

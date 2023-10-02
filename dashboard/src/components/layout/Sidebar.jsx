@@ -11,11 +11,13 @@ import {
 import logo from "../../assets/accociated-logo.svg";
 import logo1 from "../../assets/atd.svg";
 import SidebarBottom from "./SidebarBottom";
+import { useSelectedItem } from "../../contexts/SelectedItemContext";
 
 // eslint-disable-next-line react/prop-types
 const Sidebar = ({ collapsed }) => {
   const { currentUser } = useContext(UserContext);
   const { data, isLoading } = useContext(RouteContext);
+  const { setSelected } = useSelectedItem();
 
   const getList = () => {
     const array2 = data.map((item) => {
@@ -35,6 +37,20 @@ const Sidebar = ({ collapsed }) => {
       return null; // Return null if no match is found
     });
     return array2;
+  };
+
+  const handleMenuSelect = (selectedKeys) => {
+    // Handle the menu item selection here
+    console.log("Selected keys:", selectedKeys.key);
+    // Find the selected menu item in RouteContext's data
+    const selectedItem = data.find((item) => item.name === selectedKeys.key);
+
+    // Now you can access the selected item and perform any action
+    if (selectedItem) {
+      // For example, log the selected item
+      console.log("Selected menu item:", selectedItem);
+      setSelected(selectedItem);
+    }
   };
 
   return (
@@ -62,10 +78,11 @@ const Sidebar = ({ collapsed }) => {
             defaultSelectedKeys={["01"]}
             className={styles.antMenuItem}
             items={getList()}
+            onSelect={handleMenuSelect} // Add the onSelect prop
           />
         )}
         {/* <h1>Profile</h1> */}
-        <SidebarBottom />
+        <SidebarBottom collapsed={collapsed} />
       </div>
     </>
   );

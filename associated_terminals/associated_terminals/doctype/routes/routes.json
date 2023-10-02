@@ -13,7 +13,9 @@
   "path",
   "element",
   "icon",
-  "roles"
+  "roles",
+  "tabs_menu_section",
+  "tabs"
  ],
  "fields": [
   {
@@ -53,11 +55,23 @@
    "fieldtype": "Table",
    "label": "Roles",
    "options": "RoutesRoles"
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "tabs_menu_section",
+   "fieldtype": "Section Break",
+   "label": "Tabs Menu"
+  },
+  {
+   "fieldname": "tabs",
+   "fieldtype": "Table",
+   "label": "Tabs",
+   "options": "Page Tabs"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-09-20 11:32:53.007007",
+ "modified": "2023-09-28 16:14:59.443306",
  "modified_by": "Administrator",
  "module": "Associated Terminals",
  "name": "Routes",

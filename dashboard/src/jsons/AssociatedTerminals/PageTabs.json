@@ -1,0 +1,2 @@
+
+{'title': 'PageTabs', 'description': 'Form description', 'type': 'object', 'required': ['key', 'label'], 'properties': {'key': {'title': 'key', 'type': 'string'}, 'label': {'title': 'label', 'type': 'string'}, 'content': {'title': 'content', 'type': 'string'}, 'groupby': {'title': 'groupby', 'type': 'string'}}}

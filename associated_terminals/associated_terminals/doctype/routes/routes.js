@@ -7,8 +7,8 @@ frappe.ui.form.on("Routes", {
     frm.add_custom_button(__("Get Parent and Child Data"), function () {
       frappe.call({
         method:
-          "associated_terminals.associated_terminals.doctype.routes.api.get_parent_and_child_data", // Adjust this path
-        args: {},
+          "associated_terminals.associated_terminals.doctype.routes.api.get_tabs_menu_by_parent", // Adjust this path
+        args: { parent_id: frm.doc.name },
         callback: function (response) {
           // Process the retrieved data here
           var data = response.message;

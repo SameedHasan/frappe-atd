@@ -1,0 +1,58 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "field:key",
+ "creation": "2023-09-28 16:03:37.152205",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "key",
+  "label",
+  "content",
+  "groupby"
+ ],
+ "fields": [
+  {
+   "fieldname": "key",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Key",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "label",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Label",
+   "reqd": 1
+  },
+  {
+   "fieldname": "content",
+   "fieldtype": "Code",
+   "in_list_view": 1,
+   "label": "Content",
+   "mandatory_depends_on": "frappe.ui.form.on('YourDoctypeName', {\n    refresh: function(frm) {\n        // When the form is refreshed or loaded\n        frm.fields_dict['content'].reqd = frm.doc.parent ? 1 : 0;\n    },\n    parent: function(frm) {\n        // When the value of the \"parent\" field changes\n        frm.fields_dict['content'].reqd = frm.doc.parent ? 1 : 0;\n    }\n});"
+  },
+  {
+   "fieldname": "groupby",
+   "fieldtype": "Link",
+   "label": "Group By",
+   "options": "Page Tabs"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2023-10-02 11:35:11.546765",
+ "modified_by": "Administrator",
+ "module": "Associated Terminals",
+ "name": "Page Tabs",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

@@ -7,6 +7,7 @@ import Sidebar from "../components/layout/Sidebar";
 import Navbar from "../components/layout/Navbar";
 
 import { RouteContext } from "../utils/context/RoutesProvider";
+import { SelectedItemProvider } from "../contexts/SelectedItemContext";
 
 const HeadingContext = createContext();
 // eslint-disable-next-line react/prop-types
@@ -21,25 +22,27 @@ function MainLayout({ children }) {
     <Layout className={styles.layout}>
       {!routeLoading && (
         <>
-          <Sider trigger={null} collapsible collapsed={collapsed}>
-            <Sidebar collapsed={collapsed} />
-          </Sider>
-          <Layout className={styles.siteLayout}>
-            <HeadingContext.Provider
-              value={{
-                heading,
-                setHeading,
-                subHeading,
-                setSubHeading,
-              }}
-            >
-              {/* <Navbar collapsed={collapsed} setCollapsed={setCollapsed} /> */}
-              <Content className={styles.content}>
-                <Navbar collapsed={collapsed} setCollapsed={setCollapsed} />
-                {children}
-              </Content>
-            </HeadingContext.Provider>
-          </Layout>
+          <SelectedItemProvider>
+            <Sider trigger={null} collapsible collapsed={collapsed}>
+              <Sidebar collapsed={collapsed} />
+            </Sider>
+            <Layout className={styles.siteLayout}>
+              <HeadingContext.Provider
+                value={{
+                  heading,
+                  setHeading,
+                  subHeading,
+                  setSubHeading,
+                }}
+              >
+                {/* <Navbar collapsed={collapsed} setCollapsed={setCollapsed} /> */}
+                <Content className={styles.content}>
+                  <Navbar collapsed={collapsed} setCollapsed={setCollapsed} />
+                  {children}
+                </Content>
+              </HeadingContext.Provider>
+            </Layout>
+          </SelectedItemProvider>
         </>
       )}
     </Layout>
